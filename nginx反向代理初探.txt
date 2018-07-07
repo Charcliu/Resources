@@ -1,0 +1,32 @@
+server {
+    listen       8090;
+    #listen      somename:8080;
+    server_name  localhost;
+
+    root /Users/liuchang/Desktop/Fluently_Project/Vue-Project-ActualCombat/xiaomiShopping/dist/;
+
+    location / {
+        #root   html;
+        index  index.html index.htm;
+        autoindex on;
+    }
+
+    location /home/ {
+        proxy_pass http://192.168.31.245:8081/home/;
+    }
+}
+
+
+listen：是监听的端口，即用户访问nginx服务的端口
+
+server_name：服务名
+
+location：定义资源类型与服务器中资源地址url的映射关系，可在/后面定义资源类型，可设置多个location
+如上 /       下的资源就直接会访问本地资源
+    /home/  下的资源就被代理到 proxy_pass 设置的服务器上
+
+其中proxy_pass代表要反向代理的服务器资源url，只要资源类型匹配，在这个url下的子路径资源都可以访问到，
+
+其中root代表本地的资源路径，同样只要资源类型匹配，这个路径下的子目录资源都可以被访问到，
+
+一个location中只能配置一个root或proxy_pass。
