@@ -51,3 +51,9 @@ PassWord: U2FsdGVkX1/xD8rGOywXvl63Fo3xbzokIC1zIVya7cQ=
 UserName: f_liuchang@163.com
 PassWord: U2FsdGVkX18AHm2SyjWr78GpqP9mH3syXyKod2P2/fo=
 ````
+
+# 微信小程序
+````
+UserName: f_liuchang@163.com
+PassWord: U2FsdGVkX196XZidnebmWGqBtMeqUDOLD3Z0acjtReg=
+````
