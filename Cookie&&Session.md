@@ -1,7 +1,7 @@
 ### Cookie和Session
 
 > Cookie  客户端存储<br/>
-  生成的Cookie（设置的信息）会返回给客户端，后续客户端每一次请求都会带上Cookie信息。
+  生成的Cookie（设置的信息）会返回给客户端，后续客户端每一次请求都会带上Cookie信息。用于后端校验
 
 ```` bash
 设置Cookie
@@ -15,7 +15,7 @@ Cookie[] cookie = request.getCookies();
 ````
 
 > Session 服务器端存储<br/>
-  Session设置之后的信息不会发送给客户端，会保存在服务端，但是会自动生成JSESSIONID发送给客户端用于唯一标识客户，客户端后续的每次请求都会带上JSESSIONID作为标识。
+  Session设置之后的信息不会发送给客户端，会保存在服务端，但是会自动生成JSESSIONID发送给客户端用于唯一标识客户，客户端后续的每次请求都会带上JSESSIONID作为标识。用于后端识别
 
 ```` bash
 设置Session
