@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+        // 数组数据组装
+        var array_Data = [
+            {
+                id: 1,
+                city: '广东省',
+                country: '深圳市',
+                dis: '南山区',
+                village: '深南大道',
+                name: '腾讯公司'
+            },
+            {
+                id: 2,
+                city: '北京市',
+                country: null,
+                dis: '朝阳区',
+                village: '正义路',
+                name: '人民政府'
+            },
+            {
+                id: 3,
+                city: '陕西省',
+                country: '西安市',
+                dis: ' ',
+                village: '长安大道',
+                name: '曲江池'
+            }
+        ]
+
+        var result_Array = []
+
+        array_Data.forEach(function (item, index, array) {
+            let emptyObj = null, tempIndex = 0, childrenObj = null
+            for (let obj in item) {
+                if (item[obj]) {
+                    let tempObj = {
+                        label: item[obj],
+                        children: {}
+                    }
+                    if (!tempIndex) {
+                        emptyObj = tempObj
+                        childrenObj = emptyObj
+                    } else {
+                        childrenObj.children = tempObj
+                        childrenObj = childrenObj.children
+                    }
+                    tempIndex++
+                }
+            }
+            result_Array.push(emptyObj);
+        })
+        console.log(result_Array)
+    </script>
+</body>
+
+</html>
